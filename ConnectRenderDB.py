@@ -4,38 +4,6 @@
 # In[3]:
 
 
-# import psycopg2
-# import pandas as pd
-
-
-# In[13]:
-
-
-# conn = psycopg2.connect(
-#     host="dpg-d2l8ebf5r7bs73de15vg-a.oregon-postgres.render.com",
-#     port=5432,
-#     dbname="slothdb",
-#     user="slothdb_user",
-#     password="q8tZEErzUYiafyWgxmLmILapiLWH4I3O"
-# )
-
-# query = """
-# SELECT * from messages order by created_at desc;
-# """
-
-# df = pd.read_sql(query, conn)
-# df.head(10)
-
-
-# In[10]:
-
-
-# conn.close()
-
-
-# In[14]:
-
-
 import streamlit as st
 import psycopg2
 import pandas as pd
@@ -44,10 +12,10 @@ def main():
     st.title("Render PostgreSQL DB Output")
 
     # ⚡ Hardcoded DB Connection Info
-    host="dpg-d2l8ebf5r7bs73de15vg-a.oregon-postgres.render.com",
-    port=5432,
-    dbname="slothdb",
-    user="slothdb_user",
+    host="dpg-d2l8ebf5r7bs73de15vg-a.oregon-postgres.render.com"
+    port=5432
+    dbname="slothdb"
+    user="slothdb_user"
     password="q8tZEErzUYiafyWgxmLmILapiLWH4I3O"
 
     if st.button("Fetch Tables"):
@@ -75,9 +43,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# In[ ]:
 
 
 
